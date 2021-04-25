@@ -1,0 +1,83 @@
+ local lume = require("lume")
+
+ local function update(bullet, player)
+ bullet.x = (bullet.x + bullet.velx)
+ bullet.y = (bullet.y + bullet.vely)
+
+ local distance_to_player_squared = lume.distance(bullet.x, bullet.y, player.xpos, player.depth, true)
+ if (distance_to_player_squared > 10000000) then bullet.alive = false end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ if (distance_to_player_squared < 1300) then player.alive = false bullet.collided = true return nil end end local function make_bullet(x, y, velx, vely) return {alive = true, collided = false, velx = velx, vely = vely, x = x, y = y} end return {["make-bullet"] = make_bullet, update = update}
